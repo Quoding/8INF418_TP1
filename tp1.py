@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import stats
 import visualisation
 
@@ -24,4 +25,6 @@ print(data)
 stats.doStats(data)
 
 # Visualisation
-visualisation.do_class_distrib_barplot(data)
+# visualisation.do_class_distrib_barplot(data)
+# visualisation.do_sex_class_barplot(data)
+
