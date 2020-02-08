@@ -31,6 +31,9 @@ def doStats(data):
     # Ajouter plots de sexe
     # visualisation.make_sex_bar_plot(unique, counts)
     # visualisation.sex_length_height_scatter(I_s, M_s, F_s)
-    visualisation.length_height_scatter(data)
+    # visualisation.length_height_scatter(data)
+
     corr = stats.pearsonr(data.length, data.height)
+    print(data)
+
     print(corr)
