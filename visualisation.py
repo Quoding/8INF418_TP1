@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 import numpy as np
+from decimal import Decimal
 
 
 def do_class_distrib_barplot(data):
@@ -74,21 +75,21 @@ def sex_length_height_scatter(I_s, M_s, F_s):
     alpha = 1
 
     I_s.plot.scatter(
-        alpha=alpha, x="length", y="height", subplots=True, c="green", label="I"
+        alpha=alpha, x="longueur", y="hauteur", subplots=True, c="green", label="I"
     )
     plt.title("Hauteur en fonction de la longueur")
     plt.xlabel("Longueur (mm)")
     plt.ylabel("Hauteur (mm)")
 
     M_s.plot.scatter(
-        alpha=alpha, x="length", y="height", subplots=True, c="blue", label="M"
+        alpha=alpha, x="longueur", y="hauteur", subplots=True, c="blue", label="M"
     )
     plt.title("Hauteur en fonction de la longueur")
     plt.xlabel("Longueur (mm)")
     plt.ylabel("Hauteur (mm)")
 
     F_s.plot.scatter(
-        alpha=alpha, x="length", y="height", subplots=True, c="red", label="F"
+        alpha=alpha, x="longueur", y="hauteur", subplots=True, c="red", label="F"
     )
     plt.title("Hauteur en fonction de la longueur")
     plt.xlabel("Longueur (mm)")
@@ -100,9 +101,28 @@ def sex_length_height_scatter(I_s, M_s, F_s):
 
 
 def length_height_scatter(data):
-    data.plot.scatter(x="length", y="height")
+    data.plot.scatter(x="longueur", y="hauteur")
     plt.title("Hauteur en fonction de la longueur")
     plt.xlabel("Longueur (mm)")
     plt.ylabel("Hauteur (mm)")
     plt.show()
 
+
+def plot_means_per_attribute_per_class(means):
+    for feature in means:
+        # print(feature)
+        plt.bar(list(means[feature].keys()), list(means[feature].values()))
+        plt.xlabel("Classes (nombre d'anneaux)")
+        plt.ylabel(feature)
+        plt.title("Moyenne de " + feature + " selon la classe")
+        plt.show()
+
+
+def plot_stds_per_attribute_per_class(stds):
+    for feature in stds:
+        # print(feature)
+        plt.bar(list(stds[feature].keys()), list(stds[feature].values()))
+        plt.xlabel("Classes (nombre d'anneaux)")
+        plt.ylabel(feature)
+        plt.title("Ecart-type de " + feature + " selon la classe")
+        plt.show()

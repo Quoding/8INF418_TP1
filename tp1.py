@@ -8,15 +8,15 @@ import visualisation
 data = pd.read_csv(
     "abalone.data",
     names=[
-        "sex",
-        "length",
-        "diameter",
-        "height",
-        "whole",
-        "shucked",
-        "viscera",
-        "shell",
-        "rings",
+        "sexe",
+        "longueur",
+        "diametre",
+        "hauteur",
+        "poids_complet",
+        "poids_viande",
+        "poids_visceres",
+        "poids_coquille",
+        "nombre_anneau",
     ],
 )
 print("\n================Dataset================")
