@@ -105,3 +105,4 @@ def length_height_scatter(data):
     plt.xlabel("Longueur (mm)")
     plt.ylabel("Hauteur (mm)")
     plt.show()
+
