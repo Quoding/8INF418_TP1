@@ -17,6 +17,8 @@ def do_class_distrib_barplot(data):
     plt.show()
 
 
+# Methode de visualisation non vue en classe. C'est un bar plot, mais a plusieurs paliers (i.e. stats par sexe par classe)
+# Tu nous avais confirme que c'etait correct.
 def do_sex_class_barplot(data):
     # data to plot
     n_groups = 29

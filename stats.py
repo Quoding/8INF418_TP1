@@ -30,9 +30,9 @@ def doStats(data):
     print(F_s.longueur.mean())
 
     # Ajouter plots de sexe
-    # visualisation.make_sex_bar_plot(unique, counts)
-    # visualisation.sex_length_height_scatter(I_s, M_s, F_s)
-    # visualisation.length_height_scatter(data)
+    visualisation.make_sex_bar_plot(unique, counts)
+    visualisation.sex_length_height_scatter(I_s, M_s, F_s)
+    visualisation.length_height_scatter(data)
 
     # Correlation entre hauteur et longueur d'un ormeau
     corr = stats.pearsonr(data.longueur, data.hauteur)
@@ -88,12 +88,12 @@ def doStats(data):
             else:
                 stds[column][classe] = 0
 
+    # Afficher les ecarts et la moyenne - commented parce que c'est lourd dans la sortie.
     # print(stds)
     # print(means)
 
     visualisation.plot_means_per_attribute_per_class(means)
     visualisation.plot_stds_per_attribute_per_class(stds)
-
 
     # Affichage des coefficients de corrélation entre les attributs
     print("\n================Coefficients de corrélation================")
@@ -101,4 +101,11 @@ def doStats(data):
     for attr1 in data.columns[1:9]:
         for attr2 in data.columns[1:9]:
             if attr1 != attr2:
-                print(str(attr1) + " et " + str(attr2) + " : " + str(stats.pearsonr(data[attr1], data[attr2])))
+                print(
+                    str(attr1)
+                    + " et "
+                    + str(attr2)
+                    + " : "
+                    + str(stats.pearsonr(data[attr1], data[attr2]))
+                )
+
