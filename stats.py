@@ -94,3 +94,11 @@ def doStats(data):
     visualisation.plot_means_per_attribute_per_class(means)
     visualisation.plot_stds_per_attribute_per_class(stds)
 
+
+    # Affichage des coefficients de corrélation entre les attributs
+    print("\n================Coefficients de corrélation================")
+
+    for attr1 in data.columns[1:9]:
+        for attr2 in data.columns[1:9]:
+            if attr1 != attr2:
+                print(str(attr1) + " et " + str(attr2) + " : " + str(stats.pearsonr(data[attr1], data[attr2])))
